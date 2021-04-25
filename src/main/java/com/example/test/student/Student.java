@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Entity
 @Table
 public class Student {
+
     @Id
     private Long id;
     private String name;
@@ -17,8 +18,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(Long id, String name, String email, LocalDate dob) {
-        this.id = id;
+    public Student(String name, String email, LocalDate dob) {
         this.name = name;
         this.email = email;
         this.dob = dob;
