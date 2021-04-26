@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Arrays;
 
 @Configuration
 public class StudentConfig {
@@ -27,9 +28,9 @@ public class StudentConfig {
               );
 
           try {
-//              repository.saveAll(
-//                      Arrays.asList(azizbek,abdusamad)
-//              );
+              repository.saveAll(
+                      Arrays.asList(azizbek,abdusamad)
+              );
           }catch (Exception e){
               System.out.println(e);
             }
