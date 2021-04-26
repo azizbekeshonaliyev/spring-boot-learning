@@ -1,15 +1,12 @@
 package com.example.test.student;
 
-import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Arrays;
 
 @Configuration
 public class StudentConfig {
