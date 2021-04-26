@@ -1,9 +1,12 @@
 package com.example.test.student;
 
+import org.apache.commons.logging.Log;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
@@ -12,6 +15,7 @@ import java.util.Arrays;
 public class StudentConfig {
 
     @Bean
+    @Autowired
     CommandLineRunner commandLineRunner(StudentRepository repository){
         return args -> {
           Student azizbek = new Student(
@@ -25,9 +29,13 @@ public class StudentConfig {
                   LocalDate.of(1996, Month.NOVEMBER,5)
               );
 
-          repository.saveAll(
-                  Arrays.asList(azizbek,abdusamad)
-          );
+          try {
+//              repository.saveAll(
+//                      Arrays.asList(azizbek,abdusamad)
+//              );
+          }catch (Exception e){
+              System.out.println(e);
+            }
         };
     }
 }

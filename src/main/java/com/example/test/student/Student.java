@@ -1,19 +1,23 @@
 package com.example.test.student;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table
 public class Student {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
+
     private String name;
     private String email;
     private LocalDate dob;
+
+    @Transient
+    private Integer age;
 
     public Student() {
     }
@@ -54,6 +58,14 @@ public class Student {
 
     public void setDob(LocalDate dob) {
         this.dob = dob;
+    }
+
+    public Integer getAge() {
+        return Period.between(dob,LocalDate.now()).getYears();
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @Override
