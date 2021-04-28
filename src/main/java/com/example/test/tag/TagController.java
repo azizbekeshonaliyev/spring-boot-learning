@@ -1,5 +1,6 @@
 package com.example.test.tag;
 
+import org.apache.juli.logging.Log;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,5 +23,20 @@ public class TagController {
     @PostMapping
     public void store(@RequestBody Tag tag){
         tagService.create(tag);
+    }
+
+    @GetMapping(path = "/{id}")
+    public Tag show(@PathVariable Long id){
+        return tagService.get(id);
+    }
+
+    @PutMapping(path = "{id}")
+    public void update(@RequestBody Tag tag, @PathVariable Long id){
+        tagService.update(tag,id);
+    }
+
+    @DeleteMapping(path = "{id}")
+    public void destroy(@PathVariable Long id){
+        tagService.delete(id);
     }
 }
