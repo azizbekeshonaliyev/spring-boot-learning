@@ -27,13 +27,13 @@ public class StudentConfig {
                   LocalDate.of(1996, Month.NOVEMBER,5)
               );
 
-          try {
-              repository.saveAll(
-                      Arrays.asList(azizbek,abdusamad)
-              );
-          }catch (Exception e){
-              System.out.println(e);
-            }
+//          try {
+//              repository.saveAll(
+//                      Arrays.asList(azizbek,abdusamad)
+//              );
+//          }catch (Exception e){
+//              System.out.println(e);
+//            }
         };
     }
 }
